@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Heating Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="head">
+      <div class="head_backArrow">
+        <a href="index.html">
+          <i class="fas fa-arrow-left head_icon"></i>
+        </a>
+      </div>
+      <div class="head_h1">
+        <h1>Heating</h1>
+      </div>
+      <div class="head_addIcon">
+        <i class="fas fa-plus head_icon"></i>
+      </div>
+    </header>
+    <main>
+    <section>
+      <div id="tempSect">
+        <div class="temp_thermometer_div floatLeft">
+          <i class="fas fa-thermometer-half"></i>
+        </div>
+        <div class="temp_Button_div">
+          <div><h4 class="temp_h4">Temperature:</h4></div>
+          <input type="text" name="qty" class="qty temp_Disp" maxlength="12" value="0" class="input-text qty" />
+          <div class="button-container">
+		        <button class="cart-qty-plus temp_ButtonSz" type="button" value="+">+</button>
+		        <button class="cart-qty-minus temp_ButtonSz" type="button" value="-">-</button>
+          </div>
+        </div>
+      <br>
+      <br>
+      <div id="fanSpeed">
+        <h4>Fan Speed:</h4>
+        <br>
+        <div class="fan_RangeSlider">
+          <input type="range" min="1" max="100" value="50" class="fan_RangeSlider">
+        </div>
+        <br>
+        <div class="fanSpeed_float">
+          <div class="room_bulbSize floatLeft">
+            <i class="fas fa-minus-square"></i>
+          </div>
+          <div class="room_bulbSize floatRight">
+            <i class="fas fa-plus-square"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    </main>
+    <footer>
+      <nav id="footNav">
+        <ul>
+          <a href="index.html">
+            <li><i class="fas fa-home"></i></li>
+          </a>
+          <a href="security.html">
+            <li><i class="fas fa-shield-alt"></i></li>
+          </a>
+          <a href="heating.html">
+            <li><i class="fas fa-thermometer-three-quarters"></i></li>
+          </a>
+          <a href="">
+            <li><i class="fas fa-cog"></i></li>
+          </a>
+          <a href="">
+            <li><i class="fas fa-user"></i></li>
+          </a>
+        </ul>
+      </nav>
+    </footer>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

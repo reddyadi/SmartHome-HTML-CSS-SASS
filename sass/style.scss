@@ -1,0 +1,1180 @@
+@import "variable.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("../images/fullsizeoutput_42.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#head{
+  width: 100vw;
+  min-height: 10vh;
+}
+
+#head::after{
+  content:'';
+  display: inline-block;
+  clear: both;
+}
+
+.head_backArrow{
+  width: 15%;
+  float: left;
+  font-size: 40px;
+  color: $pageLabel;
+  text-align: left;
+}
+
+.head_h1{
+  width: 70%;
+  float:left;
+}
+
+.head_addIcon{
+  width: 15%;
+  float:right;
+  font-size: 40px;
+  text-align: right;
+}
+
+.head_icon{
+  color: $homeIcon;
+}
+
+/* Index Page CSS */
+
+#homeSect{
+  width: 100vw;
+  min-height: 80vh;
+  padding-top: 3em;
+  padding-left: 0.4em;
+}
+
+#homeSect::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.home_iconBox{
+  width: 30%;
+  float:left;
+  margin: 0.1em;
+  border: 2px solid $homeIconBack;
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5em;
+  border-radius: 20%;
+}
+
+.home_p{
+  font-size: .25em;
+  color: $pageLabel;
+}
+
+h1{
+  text-align: center;
+  font-size: 3em;
+  color: $pageLabel;
+  border: 2px solid $pageLabel;
+  border-radius: 25%;
+}
+
+footer{
+  width: 100vw;
+  min-height: 10vh;
+  text-align: center;
+  position: fixed; bottom: 0;
+  background-color: $pageLabel;
+}
+
+#footNav{
+      ul{
+          list-style: none;
+            li{
+              display: inline-block;
+              font-size: 25px;
+              padding: 20px;
+              color: $navIcon;
+            }
+      }
+}
+
+#soundHome{
+  opacity: 0.3;
+}
+
+#blindHome{
+  opacity: 0.3;
+}
+
+#cameraHome{
+  opacity: 0.3;
+}
+
+/* Lighting page CSS */
+
+#lightSect{
+  width: 100vw;
+  height: 100vh;
+  padding: 1em;
+}
+
+#roomOne{
+  @include lightRoomBox;
+}
+
+#roomOne::after{
+  @include lightRoomBoxFloat;
+}
+
+#roomTwo{
+  @include lightRoomBox;
+}
+
+#roomTwo::after{
+  @include lightRoomBoxFloat;
+}
+
+#roomThree{
+  @include lightRoomBox;
+}
+
+#roomThree::after{
+  @include lightRoomBoxFloat;
+}
+
+#roomFour{
+  @include lightRoomBox;
+}
+
+#roomFour::after{
+  @include lightRoomBoxFloat;
+}
+
+#roomFive{
+  @include lightRoomBox;
+}
+
+#roomFive::after{
+  @include lightRoomBoxFloat;
+}
+
+.light_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  transform:rotate(90deg);
+}
+
+.light_switch input {display:none;}
+
+.light_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $navIcon;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.light_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .light_slider {
+  background-color: $homeIconBack;
+}
+
+input:focus + .light_slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .light_slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.light_slider.round {
+  border-radius: 34px;
+}
+
+.light_slider.round:before {
+  border-radius: 50%;
+}
+
+.light_togSwitch{
+  width: 20%;
+  float: left;
+}
+
+.light_rangeSelect{
+  width: 80%;
+  float: right;
+}
+
+.room_bulbBright{
+  width: 90%;
+  height: 0;
+}
+
+.room_bulbBright::after{
+  @include lightRoomBoxFloat;
+}
+
+.room_bulbSize{
+  font-size: 1.25em;
+}
+
+.floatLeft{
+  float: left;
+}
+
+.floatRight{
+  float: right;
+}
+
+.light_RangeSlider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 2em;
+    background: $navIcon;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.light_RangeSlider:hover {
+    opacity: 1;
+}
+
+.light_RangeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: $homeIconBack;
+    cursor: pointer;
+}
+
+.light_RangeSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: $homeIconBack;
+    cursor: pointer;
+}
+
+.lighting_off{
+  background-color: white !important;
+}
+
+/* Heating Page CSS */
+
+#tempSect{
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+#tempSect::after{
+  @include lightRoomBoxFloat;
+}
+
+.temp_thermometer_div{
+  width: 50%;
+  font-size: 15em;
+}
+
+.temp_Button_div{
+  width: 50%;
+  float:left;
+}
+
+.temp_Disp{
+  font-size: 2em;
+  width: 75%;
+  text-align: center;
+}
+
+.temp_ButtonSz{
+  width: 75%;
+  font-size: 5em;
+  border: 2px solid $homeIconBack;
+  color: $navIcon;
+}
+
+#fanSpeed{
+  width: 100%;
+  @include lightRoomBoxFloat;
+  padding-left: 1.5em;
+}
+
+.fan_RangeSlider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1em;
+    background: $navIcon;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.fan_RangeSlider:hover {
+    opacity: 1;
+}
+
+.fan_RangeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: $homeIconBack;
+    cursor: pointer;
+}
+
+.fan_RangeSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: $homeIconBack;
+    cursor: pointer;
+}
+
+.fanSpeed_float{
+  width: 100%;
+  height: 0;
+}
+
+.fanSpeed_float::after{
+  @include lightRoomBoxFloat;
+}
+
+/* Appliance Page CSS */
+
+#applianceSect{
+  min-height: 150vh;
+  width: 100vw;
+  padding: 3em;
+    img{
+      height: 8em;
+      width: 8em;
+    }
+}
+
+#applianceOne{
+  @include applianceBox;
+}
+
+#applianceOne::after{
+  @include applianceBoxFloat;
+}
+
+#applianceTwo{
+  @include applianceBox;
+}
+
+#applianceTwo::after{
+  @include applianceBoxFloat;
+}
+
+#applianceThree{
+  @include applianceBox;
+}
+
+#applianceThree::after{
+  @include applianceBoxFloat;
+}
+
+#applianceFour{
+  @include applianceBox;
+}
+
+#applianceFour::after{
+  @include applianceBoxFloat;
+}
+
+#applianceFive{
+  @include applianceBox;
+}
+
+#applianceFive::after{
+  @include applianceBoxFloat;
+}
+
+.appliance_imgSz{
+  width: 80%;
+  padding-left: 1em;
+}
+
+.appliance_togSwitch{
+  width: 20%;
+  float: right;
+  padding-top: 4em;
+}
+
+.appliance_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  transform:rotate(90deg);
+}
+
+.appliance_switch input {display:none;}
+
+.appliance_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $navIcon;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.appliance_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .appliance_slider {
+  background-color: $homeIconBack;
+}
+
+input:focus + .appliance_slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .appliance_slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.appliance_slider.round {
+  border-radius: 34px;
+}
+
+.appliance_slider.round:before {
+  border-radius: 50%;
+}
+
+/* Security Page */
+
+#securitySect{
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+}
+
+#alarmBox{
+  @include securityBox;
+}
+
+#alarmBox::after{
+  @include applianceBoxFloat;
+}
+
+.security_arm{
+  width: 25%;
+  float: left;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.security_togSwitch{
+  width: 40%;
+  float: left;
+  padding-left: 2em;
+}
+
+.security_unarm{
+  width: 25%;
+  float: left;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.security_h3{
+  text-align: left;
+  color: $pageLabel;
+}
+
+.security_switch {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 2em;
+}
+
+.security_switch input {display:none;}
+
+.security_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $navIcon;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.security_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .security_slider {
+  background-color: $homeIconBack;
+}
+
+input:focus + .security_slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .security_slider:before {
+  -webkit-transform: translateX(3em);
+  -ms-transform: translateX(3em);
+  transform: translateX(3em);
+}
+
+@media only screen and (min-width:768px){
+
+  .head_backArrow{
+    width: 15%;
+    float: left;
+    font-size: 3em;
+    color: $pageLabel;
+    text-align: left;
+  }
+
+  .head_h1{
+    width: 70%;
+    float:left;
+  }
+
+  .head_addIcon{
+    width: 15%;
+    float:right;
+    font-size: 3em;
+    color: $pageLabel;
+    text-align: right;
+  }
+
+  #footNav{
+        ul{
+            list-style: none;
+              li{
+                display: inline-block;
+                font-size: 2.5em;
+                padding: 0.75em;
+                color: $navIcon;
+              }
+        }
+  }
+
+  #homeSect{
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .home_iconBox{
+    width: 30%;
+    float:left;
+    margin: 0.1em;
+    border: 2px solid $homeIconBack;
+    text-align: center;
+    font-size: 5em;
+    border-radius: 20%;
+  }
+
+  #lightSect{
+    padding: 3em;
+  }
+
+  #applianceSect{
+    min-height: 150vh;
+    width: 100vw;
+    padding: 8em;
+      img{
+        height: 10em;
+        width: 10em;
+      }
+  }
+
+  .appliance_imgSz{
+    width: 80%;
+    padding-left: 1em;
+  }
+
+  .appliance_togSwitch{
+    width: 20%;
+    float: right;
+    padding-top: 3em;
+  }
+
+  .appliance_switch {
+    position: relative;
+    display: inline-block;
+    width: 7em;
+    height: 3.5em;
+    transform:rotate(90deg);
+  }
+
+  .appliance_switch input {display:none;}
+
+  .appliance_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $navIcon;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .appliance_slider:before {
+    position: absolute;
+    content: "";
+    height: 2.65em;
+    width: 2.65em;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .appliance_slider {
+    background-color: $homeIconBack;
+  }
+
+  input:focus + .appliance_slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .appliance_slider:before {
+    -webkit-transform: translateX(4em);
+    -ms-transform: translateX(4em);
+    transform: translateX(4em);
+  }
+
+  /* Rounded sliders */
+  .appliance_slider.round {
+    border-radius: 34px;
+  }
+
+  .appliance_slider.round:before {
+    border-radius: 50%;
+  }
+
+  .light_switch {
+    position: relative;
+    display: inline-block;
+    width: 6em;
+    height: 3em;
+    transform:rotate(90deg);
+  }
+
+  .light_switch input {display:none;}
+
+  .light_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $navIcon;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .light_slider:before {
+    position: absolute;
+    content: "";
+    height: 2.5em;
+    width: 2.5em;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .light_slider {
+    background-color: $homeIconBack;
+  }
+
+  input:focus + .light_slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .light_slider:before {
+    -webkit-transform: translateX(3.15em);
+    -ms-transform: translateX(3.15em);
+    transform: translateX(3.15em);
+  }
+
+  #tempSect{
+    width: 100vw;
+    min-height: 60vh;
+    padding: 4em;
+  }
+
+  #securitySect{
+    width: 100vw;
+    height: 100vh;
+    padding: 5em;
+  }
+
+  .security_togSwitch{
+    width: 40%;
+    float: left;
+    padding-left: 7em;
+  }
+}
+
+@media only screen and (min-width:1300px){
+
+  h1{
+    text-align: center;
+    font-size: 10em;
+    color: $pageLabel;
+    border: 2px solid $pageLabel;
+    border-radius: 25%;
+  }
+
+  .head_backArrow{
+    width: 15%;
+    float: left;
+    font-size: 10em;
+    color: $pageLabel;
+    text-align: left;
+  }
+
+  .head_h1{
+    width: 70%;
+    float:left;
+  }
+
+  .head_addIcon{
+    width: 15%;
+    float:right;
+    font-size: 10em;
+    color: $pageLabel;
+    text-align: right;
+  }
+
+  #footNav{
+        ul{
+            list-style: none;
+              li{
+                display: inline-block;
+                font-size: 5em;
+                padding: 1em;
+                color: $navIcon;
+              }
+        }
+  }
+
+  #homeSect{
+    width: 100vw;
+    min-height: 150vh;
+  }
+
+  .home_iconBox{
+    width: 30%;
+    float:left;
+    border: 2px solid $homeIconBack;
+    text-align: center;
+    font-size: 10em;
+    border-radius: 20%;
+  }
+
+  #lightSect{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  h4{
+    padding: 3em;
+    font-size: 3em
+  }
+
+  .room_bulbSize{
+    font-size: 5em;
+  }
+
+  #roomOne{
+    @include lightRoomBoxLrg;
+  }
+
+  #roomOne::after{
+    @include lightRoomBoxFloat;
+  }
+
+  #roomTwo{
+    @include lightRoomBoxLrg;
+  }
+
+  #roomTwo::after{
+    @include lightRoomBoxFloat;
+  }
+
+  #roomThree{
+    @include lightRoomBoxLrg;
+  }
+
+  #roomThree::after{
+    @include lightRoomBoxFloat;
+  }
+
+  #roomFour{
+    @include lightRoomBoxLrg;
+  }
+
+  #roomFour::after{
+    @include lightRoomBoxFloat;
+  }
+
+  #roomFive{
+    @include lightRoomBoxLrg;
+  }
+
+  #roomFive::after{
+    @include lightRoomBoxFloat;
+  }
+
+  .light_switch {
+    position: relative;
+    display: inline-block;
+    width: 15em;
+    height: 8em;
+    transform:rotate(90deg);
+  }
+
+  .light_switch input {display:none;}
+
+  .light_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $navIcon;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .light_slider:before {
+    position: absolute;
+    content: "";
+    height: 7.5em;
+    width: 7.5em;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .light_slider {
+    background-color: $homeIconBack;
+  }
+
+  input:focus + .light_slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .light_slider:before {
+    -webkit-transform: translateX(7.3em);
+    -ms-transform: translateX(7.3em);
+    transform: translateX(7.3em);
+  }
+
+  .light_RangeSlider {
+      -webkit-appearance: none;
+      width: 90%;
+      height: 7em;
+      background: $navIcon;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+  }
+
+  .light_RangeSlider:hover {
+      opacity: 1;
+  }
+
+  .light_RangeSlider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 7em;
+      height: 7em;
+      background: $homeIconBack;
+      cursor: pointer;
+  }
+
+  .light_RangeSlider::-moz-range-thumb {
+      width: 7em;
+      height: 7em;
+      background: $homeIconBack;
+      cursor: pointer;
+  }
+
+  #applianceSect{
+    height: 250vh;
+    width: 100vw;
+    padding: 8em;
+      img{
+        height: 35em;
+        width: 35em;
+      }
+  }
+
+
+    .appliance_switch {
+      position: relative;
+      display: inline-block;
+      width: 14em;
+      height: 7em;
+      transform:rotate(90deg);
+    }
+
+    .appliance_switch input {display:none;}
+
+    .appliance_slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $navIcon;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .appliance_slider:before {
+      position: absolute;
+      content: "";
+      height: 6.5em;
+      width: 6.5em;
+      left: 6px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .appliance_slider {
+      background-color: $homeIconBack;
+    }
+
+    input:focus + .appliance_slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .appliance_slider:before {
+      -webkit-transform: translateX(6.7em);
+      -ms-transform: translateX(6.7em);
+      transform: translateX(6.7em);
+    }
+
+  #tempSect{
+    width: 100vw;
+    min-height: 60vh;
+    padding: 5em;
+  }
+
+  .temp_h4{
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-left: 0;
+
+  }
+
+  .temp_Disp{
+    font-size: 5em;
+    width: 75%;
+    text-align: center;
+  }
+
+  .temp_thermometer_div{
+    width: 50%;
+    font-size: 15em;
+    padding-left: 1em;
+    padding-top: 1em;
+  }
+
+  .temp_Button_div{
+    width: 50%;
+    float:left;
+  }
+
+
+  .fan_RangeSlider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 3em;
+      background: $navIcon;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+  }
+
+  .fan_RangeSlider:hover {
+      opacity: 1;
+  }
+
+  .fan_RangeSlider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 8em;
+      height: 8em;
+      background: $homeIconBack;
+      cursor: pointer;
+  }
+
+  .fan_RangeSlider::-moz-range-thumb {
+      width: 8em;
+      height: 8em;
+      background: $homeIconBack;
+      cursor: pointer;
+  }
+
+  #securitySect{
+    width: 100vw;
+    min-height: 150vh;
+    padding: 5em;
+  }
+
+  #alarmBox{
+    @include securityBoxLrg;
+  }
+
+  #alarmBox::after{
+    @include applianceBoxFloat;
+  }
+
+  .security_arm{
+    width: 25%;
+    float: left;
+    font-size: 5em;
+    text-align: center;
+  }
+
+  .security_togSwitch{
+    width: 40%;
+    float: left;
+    padding-left: 10em;
+  }
+
+  .security_unarm{
+    width: 25%;
+    float: left;
+    font-size: 5em;
+    text-align: center;
+  }
+
+  .security_h3{
+    text-align: left;
+    color: $pageLabel;
+    font-size: 4em;
+  }
+
+  .security_switch {
+    position: relative;
+    display: inline-block;
+    width: 15em;
+    height: 5em;
+  }
+
+  .security_switch input {display:none;}
+
+  .security_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $navIcon;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .security_slider:before {
+    position: absolute;
+    content: "";
+    height: 4.5em;
+    width: 5em;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .security_slider {
+    background-color: $homeIconBack;
+  }
+
+  input:focus + .security_slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .security_slider:before {
+    -webkit-transform: translateX(9.25em);
+    -ms-transform: translateX(9.25em);
+    transform: translateX(9.25em);
+  }
+
+}

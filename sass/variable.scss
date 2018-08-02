@@ -1,0 +1,42 @@
+$pageLabel: #33BEFF;
+$homeIconBack: #32F0BA;
+$homeIcon: #FFE633;
+$navIcon: #808080;
+
+@mixin lightRoomBox{
+  width: 100%;
+  min-height: 6em;
+}
+
+@mixin lightRoomBoxFloat{
+  content:'';
+  display: inline-block;
+  clear: both;
+}
+
+@mixin applianceBox{
+  width: 100%;
+  min-height: 8em;
+}
+
+@mixin applianceBoxFloat{
+  content:'';
+  display: table;
+  clear: both;
+}
+
+@mixin securityBox{
+  width: 100%;
+  min-height: 3em;
+}
+
+@mixin lightRoomBoxLrg{
+  width: 100%;
+  height: 38em;
+  padding: 3em;
+}
+
+@mixin securityBoxLrg{
+  width: 100%;
+  min-height: 15em;
+}
